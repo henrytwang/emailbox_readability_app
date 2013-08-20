@@ -36,8 +36,22 @@ class HomeController < ApplicationController
                       }
                   }'
     end
-    puts JSON.parse(response.body)["data"][0]["Email"]["original"]["ParsedData"][0]["Data"]
-    @readability = "1min"
+
+    text = JSON.parse(response.body)["data"][0]["Email"]["original"]["ParsedData"][0]["Data"]
+    p text
+    p characters = text.split(" ")
+    p length = characters.length
+    p minutes = length/180.0
+
+    if minutes > 10
+      @readability = "Over 10 minutes"
+    elsif minutes > 5
+      @readability = "5-10 minutes"
+    elsif minutes > 1
+      @readability = "1-5 minutes"
+    else
+      @readability = "Under 1 minute"
+    end
 
     response = conn.post do |req|
       req.url 'https://api.getemailbox.com/api/event'
