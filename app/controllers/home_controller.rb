@@ -38,10 +38,9 @@ class HomeController < ApplicationController
     end
 
     text = JSON.parse(response.body)["data"][0]["Email"]["original"]["ParsedData"][0]["Data"]
-    p text
-    p characters = text.split(" ")
-    p length = characters.length
-    p minutes = length/180.0
+    words = text.split(" ")
+    length = words.length
+    minutes = length/180.0
 
     if minutes > 10
       @readability = "Over 10 minutes"
