@@ -13,13 +13,8 @@
         "events": {
             "emit": [],
             "listen": {
-                "Email.ping": {
-                    "url": "http://emailbox-readability.herokuapp.com/",
-                    "follow": [],
-                    "conditions": {}
-                },
                 "Email.new": {
-                    "url": "http://emailbox-readability.herokuapp.com/",
+                    "url": "http://www.yoursite.com/incoming_email",
                     "follow": [],
                     "conditions": {}
                 }
