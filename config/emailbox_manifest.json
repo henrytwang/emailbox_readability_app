@@ -14,12 +14,12 @@
             "emit": [],
             "listen": {
                 "Email.ping": {
-                    "url": "https://henrywang.fwd.wf/",
+                    "url": "http://emailbox-readability.herokuapp.com/",
                     "follow": [],
                     "conditions": {}
                 },
-                "Email.isnewemail": {
-                    "url": "https://henrywang.fwd.wf/",
+                "Email.new": {
+                    "url": "http://emailbox-readability.herokuapp.com/",
                     "follow": [],
                     "conditions": {}
                 }
