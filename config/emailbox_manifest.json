@@ -1,0 +1,31 @@
+{
+    "name": "Readability",
+    "package": "pkg.dev.readability",
+    "description": "Label emails with estimated time-to-read.",
+    "plan": "",
+    "coupon": "",
+    "plain_permissions": "Readability will access received emails to generate a score based on text content.",
+    "permissions": {
+        "read": {},
+        "write": {},
+        "indexes": {},
+        "storage": false,
+        "events": {
+            "emit": [],
+            "listen": {
+                "Email.ping": {
+                    "url": "https://henrywang.fwd.wf/",
+                    "follow": [],
+                    "conditions": {}
+                },
+                "Email.isnewemail": {
+                    "url": "https://henrywang.fwd.wf/",
+                    "follow": [],
+                    "conditions": {}
+                }
+            }
+        }
+    },
+    "dependencies": ["pkg.native.email"],
+    "indexes": {}
+}
